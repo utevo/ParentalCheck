@@ -39,7 +39,7 @@ class Danger(models.Model):
 def get_image_path(instance, filename): # instance is None before create!
     from os import path
     file_ext = path.splitext(filename)[1]
-    return path.join('photos', str(instance.id), 
+    return path.join(str(instance.id), 
                         'avatar' + file_ext )
 
 class Content(models.Model):
