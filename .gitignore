@@ -13,7 +13,7 @@ tests/coverage_html/
 tests/.coverage
 build/
 tests/report/
-db.sqlite3/
+db.sqlite3
 
 media/*
 !media/default
