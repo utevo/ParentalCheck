@@ -1,10 +1,9 @@
 from django.db import models
-
+import os
 
 class DangerType(models.Model):
-    name = moders.CharField(max_length=50)
+    name = models.CharField(max_length=50)
     description = models.TextField(max_length=200)
-
 
 
 NONE = 'N'
@@ -42,11 +41,11 @@ CONTENT_TYPE = (
     (YOUTUBE_CHANNEl, 'Youtube Channel'),
     (FACEBOOK_GROUP, 'Facebook Group'),
     (FACEBOOK_ACCOUNT, 'Facebook Account'),
-    (TWITTER_ACCOUNT, 'Twitter Account')
+    (TWITTER_ACCOUNT, 'Twitter Account'),
     (REDDIT_THREAD, 'Reddit Thread'),
 )
 
-def get_image_path(instance, filename):
+def get_image_path(instance, filename): # instance is None before create!
     return os.path.join('photos', str(instance.id), filename)
 
 class Content(models.Model):
@@ -59,5 +58,4 @@ class Content(models.Model):
         choices=CONTENT_TYPE,
     )
 
-    image = ImageField(upload_to=get_image_path, blank=True, null=True)
-
+    image = models.ImageField(upload_to=get_image_path, blank=True, null=True)
