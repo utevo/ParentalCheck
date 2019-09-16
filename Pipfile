@@ -10,7 +10,6 @@ pytz = "==2019.2"
 sqlparse = "==0.3.0"
 Django = "==2.2.5"
 Pillow = "==6.1.0"
-django-bootstrap4 = "*"
 
 [requires]
 python_version = "3.7"

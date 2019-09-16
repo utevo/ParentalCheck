@@ -28,7 +28,6 @@ INSTALLED_APPS = [
     
     'parentalcheck',
 
-    'bootstrap4',
 ]
 
 MIDDLEWARE = [
